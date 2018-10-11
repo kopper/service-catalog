@@ -39,7 +39,7 @@ import (
 
 	"github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog"
 	"k8s.io/apimachinery/pkg/api/apitesting/fuzzer"
-	"k8s.io/apimachinery/pkg/api/testing/roundtrip"
+	"k8s.io/apimachinery/pkg/api/apitesting/roundtrip"
 
 	_ "github.com/kubernetes-incubator/service-catalog/pkg/apis/servicecatalog/install"
 )
