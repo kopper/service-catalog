@@ -70,11 +70,11 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	scheme.AddKnownTypes(schema.GroupVersion{Version: "v1"}, &metav1.Status{})
 	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ClusterServiceClass"), ClusterServiceClassFieldLabelConversionFunc)
-	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ServiceClass"), ClusterServiceClassFieldLabelConversionFunc)
-	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ClusterServicePlan"), ClusterServiceClassFieldLabelConversionFunc)
-	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ServicePlan"), ClusterServiceClassFieldLabelConversionFunc)
-	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ServiceInstance"), ClusterServiceClassFieldLabelConversionFunc)
-	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ServiceBinding"), ClusterServiceClassFieldLabelConversionFunc)
+	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ServiceClass"), ServiceClassFieldLabelConversionFunc)
+	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ClusterServicePlan"), ClusterServicePlanFieldLabelConversionFunc)
+	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ServicePlan"), ServicePlanFieldLabelConversionFunc)
+	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ServiceInstance"), ServiceInstanceFieldLabelConversionFunc)
+	scheme.AddFieldLabelConversionFunc(serviceCatalogV1Beta1GVK("ServiceBinding"), ServiceBindingFieldLabelConversionFunc)
 
 	return nil
 }
