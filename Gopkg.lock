@@ -27,6 +27,17 @@
   revision = "0bfa98e49e7a976af91e918d47978f07c00b081f"
 
 [[projects]]
+  branch = "master"
+  digest = "1:81f8c061c3d18ed1710957910542bc17d2b789c6cd19e0f654c30b35fd255ca5"
+  name = "github.com/Azure/go-ansiterm"
+  packages = [
+    ".",
+    "winterm",
+  ]
+  pruneopts = "NUT"
+  revision = "d6e3b3328b783f23731bc4d058875b0371ff8109"
+
+[[projects]]
   digest = "1:da314556429036001a322965147bf09bfc11604fc5cea8b93f389eaeb4133e46"
   name = "github.com/Azure/go-autorest"
   packages = [
@@ -59,6 +70,14 @@
   packages = ["."]
   pruneopts = "NUT"
   revision = "5bd2802263f21d8788851d5305584c82a5c75d7e"
+
+[[projects]]
+  digest = "1:ecf78eacf406c42f07f66d6b79fda24d2b92dc711bfd0760d0c931678f9621fe"
+  name = "github.com/Sirupsen/logrus"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "ad15b42461921f1fb3529b058c6786c6a45d5162"
+  version = "v1.1.1"
 
 [[projects]]
   branch = "master"
@@ -208,6 +227,17 @@
   pruneopts = "NUT"
   revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
   version = "v3.2.0"
+
+[[projects]]
+  digest = "1:53e99d883df3e940f5f0223795f300eb32b8c044f226132bfc0e74930f24ea4b"
+  name = "github.com/docker/docker"
+  packages = [
+    "pkg/term",
+    "pkg/term/windows",
+  ]
+  pruneopts = "NUT"
+  revision = "092cba3727bb9b4a2f0e922cd6c0f93ea270e363"
+  version = "v1.13.1"
 
 [[projects]]
   digest = "1:167869ab83b3cc492e8fc22feb5d01f2cefef01f5de50daeb51d63c155e44f36"
@@ -492,6 +522,14 @@
   ]
   pruneopts = "NUT"
   revision = "a0ff2567cfb70903282db057e799fd826784d41d"
+
+[[projects]]
+  digest = "1:4059c14e87a2de3a434430340521b5feece186c1469eff0834c29a63870de3ed"
+  name = "github.com/konsorten/go-windows-terminal-sequences"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "5c8c8bd35d3832f5d134ae1e1e375b69a4d25242"
+  version = "v1.0.1"
 
 [[projects]]
   branch = "master"
@@ -982,8 +1020,8 @@
   revision = "53feefa2559fb8dfa8d81baad31be332c97d6c77"
 
 [[projects]]
-  branch = "release-1.11"
-  digest = "1:6dd53537a34d9b612e66acd39859953cf7ad70e5b5953937bed5ea998355e7b8"
+  branch = "release-1.12"
+  digest = "1:94301b30a06d7f1dd97a8148c1a2f92e969763f3da75f067ff1cb77e259e3ba5"
   name = "k8s.io/api"
   packages = [
     "admission/v1beta1",
@@ -998,10 +1036,12 @@
     "authorization/v1beta1",
     "autoscaling/v1",
     "autoscaling/v2beta1",
+    "autoscaling/v2beta2",
     "batch/v1",
     "batch/v1beta1",
     "batch/v2alpha1",
     "certificates/v1beta1",
+    "coordination/v1beta1",
     "core/v1",
     "events/v1beta1",
     "extensions/v1beta1",
@@ -1018,21 +1058,21 @@
     "storage/v1beta1",
   ]
   pruneopts = "NUT"
-  revision = "4e7be11eab3ffcfc1876898b8272df53785a9504"
+  revision = "507f29373a170184d325ea007e032b686bb189ac"
 
 [[projects]]
-  branch = "release-1.11"
-  digest = "1:145aa6f1c188e80ac063bd5924545a91f36d06c51e676e2ff1fc22f0434cd328"
+  branch = "release-1.12"
+  digest = "1:e490e423b55b9016bdd25e148cf310729264f5e6a1af5765d2d51e6beb992d21"
   name = "k8s.io/apimachinery"
   packages = [
+    "pkg/api/apitesting",
+    "pkg/api/apitesting/fuzzer",
+    "pkg/api/apitesting/roundtrip",
     "pkg/api/equality",
     "pkg/api/errors",
     "pkg/api/meta",
     "pkg/api/meta/table",
     "pkg/api/resource",
-    "pkg/api/testing",
-    "pkg/api/testing/fuzzer",
-    "pkg/api/testing/roundtrip",
     "pkg/api/validation",
     "pkg/api/validation/path",
     "pkg/apis/meta/fuzzer",
@@ -1064,6 +1104,7 @@
     "pkg/util/intstr",
     "pkg/util/json",
     "pkg/util/mergepatch",
+    "pkg/util/naming",
     "pkg/util/net",
     "pkg/util/rand",
     "pkg/util/runtime",
@@ -1081,11 +1122,11 @@
     "third_party/forked/golang/reflect",
   ]
   pruneopts = "NUT"
-  revision = "def12e63c512da17043b4f0293f52d1006603d9f"
+  revision = "6dd46049f39503a1fc8d65de4bd566829e95faff"
 
 [[projects]]
-  branch = "release-1.11"
-  digest = "1:657b0ace5f2743daf1136e4e48c6cb010a5eb1481cf6d353bc834e11be9af177"
+  branch = "release-1.12"
+  digest = "1:bc43102a117ab1831f8d8470fd794b82207f79df6a7b1260e160ad1c0adea4e2"
   name = "k8s.io/apiserver"
   packages = [
     "pkg/admission",
@@ -1103,12 +1144,14 @@
     "pkg/admission/plugin/webhook/namespace",
     "pkg/admission/plugin/webhook/request",
     "pkg/admission/plugin/webhook/rules",
+    "pkg/admission/plugin/webhook/util",
     "pkg/admission/plugin/webhook/validating",
     "pkg/apis/apiserver",
     "pkg/apis/apiserver/install",
     "pkg/apis/apiserver/v1alpha1",
     "pkg/apis/audit",
     "pkg/apis/audit/install",
+    "pkg/apis/audit/v1",
     "pkg/apis/audit/v1alpha1",
     "pkg/apis/audit/v1beta1",
     "pkg/apis/audit/validation",
@@ -1128,6 +1171,7 @@
     "pkg/authentication/user",
     "pkg/authorization/authorizer",
     "pkg/authorization/authorizerfactory",
+    "pkg/authorization/path",
     "pkg/authorization/union",
     "pkg/endpoints",
     "pkg/endpoints/discovery",
@@ -1153,6 +1197,7 @@
     "pkg/server/routes/data/swagger",
     "pkg/server/storage",
     "pkg/storage",
+    "pkg/storage/cacher",
     "pkg/storage/errors",
     "pkg/storage/etcd",
     "pkg/storage/etcd/metrics",
@@ -1163,6 +1208,7 @@
     "pkg/storage/storagebackend",
     "pkg/storage/storagebackend/factory",
     "pkg/storage/value",
+    "pkg/util/dryrun",
     "pkg/util/feature",
     "pkg/util/flag",
     "pkg/util/flushwriter",
@@ -1179,11 +1225,11 @@
     "plugin/pkg/authorizer/webhook",
   ]
   pruneopts = "NUT"
-  revision = "d296c96c12b7d15d7fb5fea7a05fb165f8fd4014"
+  revision = "a4ed22a224c0a5f970851abac59d313a6ac803c5"
 
 [[projects]]
-  branch = "release-8.0"
-  digest = "1:b58c93a480bd59d44a377a7e3dd10ce2db4296a3226e394c70a9397669120af6"
+  branch = "release-9.0"
+  digest = "1:bfff12887cc0d5f830b58fd1004468028e6ce0b1fcf98cfae07797061ee596a5"
   name = "k8s.io/client-go"
   packages = [
     "discovery",
@@ -1199,12 +1245,15 @@
     "informers/autoscaling",
     "informers/autoscaling/v1",
     "informers/autoscaling/v2beta1",
+    "informers/autoscaling/v2beta2",
     "informers/batch",
     "informers/batch/v1",
     "informers/batch/v1beta1",
     "informers/batch/v2alpha1",
     "informers/certificates",
     "informers/certificates/v1beta1",
+    "informers/coordination",
+    "informers/coordination/v1beta1",
     "informers/core",
     "informers/core/v1",
     "informers/events",
@@ -1254,6 +1303,8 @@
     "kubernetes/typed/autoscaling/v1/fake",
     "kubernetes/typed/autoscaling/v2beta1",
     "kubernetes/typed/autoscaling/v2beta1/fake",
+    "kubernetes/typed/autoscaling/v2beta2",
+    "kubernetes/typed/autoscaling/v2beta2/fake",
     "kubernetes/typed/batch/v1",
     "kubernetes/typed/batch/v1/fake",
     "kubernetes/typed/batch/v1beta1",
@@ -1262,6 +1313,8 @@
     "kubernetes/typed/batch/v2alpha1/fake",
     "kubernetes/typed/certificates/v1beta1",
     "kubernetes/typed/certificates/v1beta1/fake",
+    "kubernetes/typed/coordination/v1beta1",
+    "kubernetes/typed/coordination/v1beta1/fake",
     "kubernetes/typed/core/v1",
     "kubernetes/typed/core/v1/fake",
     "kubernetes/typed/events/v1beta1",
@@ -1297,10 +1350,12 @@
     "listers/apps/v1beta2",
     "listers/autoscaling/v1",
     "listers/autoscaling/v2beta1",
+    "listers/autoscaling/v2beta2",
     "listers/batch/v1",
     "listers/batch/v1beta1",
     "listers/batch/v2alpha1",
     "listers/certificates/v1beta1",
+    "listers/coordination/v1beta1",
     "listers/core/v1",
     "listers/events/v1beta1",
     "listers/extensions/v1beta1",
@@ -1354,11 +1409,11 @@
     "util/workqueue",
   ]
   pruneopts = "NUT"
-  revision = "f2f85107cac6fe04c30435ca0ac0c3318fd1b94c"
+  revision = "3e32c8333043fc2c058455f4d32986a89d31b05b"
 
 [[projects]]
-  branch = "release-1.11"
-  digest = "1:2bb5c4f6b4f5806d5e9855a6c243937b3b3b76a5b389a2c2dfd7a69bf8972ace"
+  branch = "release-1.12"
+  digest = "1:4beedea08bba86b3966b66ea1489b44550d883599dc9b96adba0459ae22d7713"
   name = "k8s.io/code-generator"
   packages = [
     "cmd/client-gen",
@@ -1387,7 +1442,7 @@
     "pkg/util",
   ]
   pruneopts = "NUT"
-  revision = "8c97d6ab64da020f8b151e9d3ed8af3172f5c390"
+  revision = "3dcf91f64f638563e5106f21f50c31fa361c918d"
 
 [[projects]]
   branch = "master"
@@ -1466,13 +1521,13 @@
     "gopkg.in/yaml.v2",
     "k8s.io/api/authorization/v1",
     "k8s.io/api/core/v1",
+    "k8s.io/apimachinery/pkg/api/apitesting/fuzzer",
+    "k8s.io/apimachinery/pkg/api/apitesting/roundtrip",
     "k8s.io/apimachinery/pkg/api/equality",
     "k8s.io/apimachinery/pkg/api/errors",
     "k8s.io/apimachinery/pkg/api/meta",
     "k8s.io/apimachinery/pkg/api/meta/table",
     "k8s.io/apimachinery/pkg/api/resource",
-    "k8s.io/apimachinery/pkg/api/apitesting/fuzzer",
-    "k8s.io/apimachinery/pkg/api/apitesting/roundtrip",
     "k8s.io/apimachinery/pkg/api/validation",
     "k8s.io/apimachinery/pkg/apis/meta/fuzzer",
     "k8s.io/apimachinery/pkg/apis/meta/v1",
